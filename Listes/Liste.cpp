@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "Liste.h"
 
-/* Type liste
+/* Type liste : présent dans Liste.h
 struct liste
 {
     int v;

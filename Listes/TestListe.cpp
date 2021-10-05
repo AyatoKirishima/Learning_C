@@ -8,7 +8,7 @@ int main() {
     L1 = AjoutEntete(L1, 2);
 
     // Affichage
-    printf("Contenu de L1 :\n");
+    printf("Contenu de L1 : \n");
     EcritListe(L1);
     printf("Taille de L1 = %d\n", Taille(L1));
 }
