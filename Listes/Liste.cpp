@@ -69,8 +69,33 @@ liste *Appartient(liste *l, int e) {
     }
 }
 
-/* Recherche d'un minimum (son adresse)
-liste *Minimum(liste *l);*/
+/* Recherche d'un minimum (son adresse) */
+liste *Minimum(liste *l) 
+{
+    if (l) // Non vide
+    {
+        liste *p = Minimum(l->s);
+        if (p) // non vide
+        {
+            if (p->v < l->v)
+            {
+                return p;
+            }
+            else
+            {
+                return l;
+            }
+        }
+        else 
+        {
+            return l;
+        }
+    }
+    else
+    {
+        return NULL; //ou l
+    }
+}
 
 /* Recherche du maximum (son adresse)
 liste *Maximum(liste *l);*/
