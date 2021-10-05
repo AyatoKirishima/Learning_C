@@ -11,4 +11,7 @@ int main() {
     printf("Contenu de L1 : \n");
     EcritListe(L1);
     printf("Taille de L1 = %d\n", Taille(L1));
+
+    printf("Liste à partir de l'élément cherché :\n");
+    EcritListe(Appartient(L1, 5));
 }

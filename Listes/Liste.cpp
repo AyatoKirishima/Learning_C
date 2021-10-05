@@ -20,7 +20,11 @@ liste *AjoutEntete(liste *l, int e)
 }
 
 /* Insertion d'un element en fin de liste
-liste *AjoutEnqueue(liste *l);*/
+liste *AjoutEnqueue(liste *l) 
+{
+    liste *r;
+    return r;
+}*/
 
 /* Affichage d'une liste*/
 void EcritListe(liste *l)
@@ -46,8 +50,24 @@ int Taille(liste *l)
         }
 }
 
-/* Verifier l'appartenance d'1 liste
-liste *Appartient(liste *l, int e);*/
+/* Verifier l'appartenance d'1 liste */
+liste *Appartient(liste *l, int e) {
+    if (!l) 
+    {
+        return  NULL;
+    } 
+    else
+    {
+        if (l->v == e) 
+        {
+            return l;
+        }
+        else
+        {
+            return Appartient(l->s, e);
+        }
+    }
+}
 
 /* Recherche d'un minimum (son adresse)
 liste *Minimum(liste *l);*/
