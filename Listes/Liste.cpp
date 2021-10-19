@@ -247,3 +247,5 @@ int long ValMin(liste *l)
         return LONG.MAX;
     }
 }
+
+/*Tri / insertion dans liste triée */
