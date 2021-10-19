@@ -10,7 +10,7 @@ struct liste
 }*/
 
 /* Insertion d'un element en tete*/
-liste *AjoutEntete(liste *l, int e)
+liste *AjoutEnTete(liste *l, int e)
 {
     liste *r;
     r = new liste;
@@ -19,12 +19,25 @@ liste *AjoutEntete(liste *l, int e)
     return r;
 }
 
-/* Insertion d'un element en fin de liste
-liste *AjoutEnqueue(liste *l) 
+/* Insertion d'un element en fin de liste */
+void AjoutEnQueue(liste *&l, int e)
 {
-    liste *r;
-    return r;
-}*/
+    if(l == NULL)
+    {
+        liste *r;
+        r = new liste;
+
+        r->v = e;
+
+        r->s = NULL;
+
+        l = r; 
+    }
+    else
+    {
+        AjoutEnQueue(l->s, e);
+    }
+}
 
 /* Affichage d'une liste*/
 void EcritListe(liste *l)
@@ -38,13 +51,15 @@ void EcritListe(liste *l)
 }
 
 /* Affichage d'une liste en récursif */
-void EcritRec(liste *l) {
-    if(l) { // non vide
+void EcritRec(liste *l) 
+{
+    if(l)  // non vide
+    {
         printf("%d",l->v);
         printf("\n");
         EcritRec(l->s);
     }
-    printf("\n");
+    //printf("\n");
 }
 
 /* Calcul de la taille d'1 liste*/
@@ -131,8 +146,20 @@ bool ContientDiviseur(liste *l, int e)
 }
 
 /* Construire la liste des nombres premiers <= n donné */
-Liste *Nbprem(int n) 
+liste *Nbprem(int n) 
 {
-
+    if(n<2) 
+    {
+        return NULL;
+    }
+    else
+    {
+        liste *l = Nbprem(n-1);
+        if (!ContientDiviseur(l,n))
+        {
+            AjoutEnQueue(l,n);
+        }
+        return l;
+    }
 }
 

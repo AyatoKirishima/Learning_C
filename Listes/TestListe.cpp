@@ -2,10 +2,12 @@
 
 int main() {
     liste *L1;
-    L1 = AjoutEntete(NULL, 3);
-    L1 = AjoutEntete(L1, 5);
-    L1 = AjoutEntete(L1, 13);
-    L1 = AjoutEntete(L1, 2); // liste = 2 13 5 3
+    L1 = AjoutEnTete(NULL, 3);
+    L1 = AjoutEnTete(L1, 5);
+    L1 = AjoutEnTete(L1, 7);
+    L1 = AjoutEnTete(L1, 13);
+    L1 = AjoutEnTete(L1, 2); // liste = 2 13 5 3
+    AjoutEnQueue(L1, 9);
 
     /* Affichage
     printf("Contenu de L1 : \n");
@@ -17,4 +19,9 @@ int main() {
 
     printf("Verif appartenance\n");
     EcritRec(Appartient(L1,13));
+
+    printf("\n");
+
+    printf("Liste des nombres premiers <= 30\n");
+    EcritRec(Nbprem(30));
 }

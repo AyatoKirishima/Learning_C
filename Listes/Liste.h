@@ -9,10 +9,10 @@ struct liste
 };
 
 /* Insertion d'un element en tete*/
-liste *AjoutEntete(liste *l, int e);
+liste *AjoutEnTete(liste *l, int e);
 
 /* Insertion d'un element en fin de liste*/
-liste *AjoutEnqueue(liste *l);
+void AjoutEnQueue(liste *&l, int n);
 
 /* Affichage d'une liste*/
 void EcritListe(liste *l);
@@ -36,5 +36,5 @@ void EcritRec(liste *l);
 bool ContientDiviseur(liste *l, int e);
 
 /* Construire la liste des nombres premiers <= n donné */
-Liste *Nbprem(int n);
+liste *Nbprem(int n);
 #endif
