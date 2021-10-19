@@ -163,3 +163,15 @@ liste *Nbprem(int n)
     }
 }
 
+/* Vérifier si la liste donnée est croissante */
+bool EstCroissant(liste *l)
+{
+    if(l && l->s) //au moins 2 éléments
+    {
+        return (l->v < l->s->v) && EstCroissant(l->s);
+    }
+    else
+    {
+        return true; // l est vide ou contient un seul élément
+    }
+}

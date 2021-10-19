@@ -37,4 +37,11 @@ bool ContientDiviseur(liste *l, int e);
 
 /* Construire la liste des nombres premiers <= n donné */
 liste *Nbprem(int n);
+
+/* Vérifier si la liste donnée est croissante */
+bool EstCroissant(liste *l);
+
+/* Adresses du minimum et du maximum */
+void PosMinMax(liste *l, liste *&lmin, liste *&lmax);
+
 #endif
