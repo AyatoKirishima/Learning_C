@@ -94,7 +94,19 @@ liste *Appartient(liste *l, int e) {
     }
 }
 
-/* Recherche d'un minimum (son adresse) */
+/* Recherche d'un minimum (son adresse) 
+
+Liste *Minimum(Liste *l) {
+    if (l) {
+        Liste *p = Minimum(l->s);
+        if(p){
+            if(p->v<l->v)return p;
+            else return l;
+        }
+        else return l;
+    }
+    else return l;
+}*/
 liste *Minimum(liste *l) 
 {
     if (l) // Non vide
@@ -122,8 +134,21 @@ liste *Minimum(liste *l)
     }
 }
 
-/* Recherche du maximum (son adresse)
-liste *Maximum(liste *l);*/
+/* Recherche du maximum (son adresse) */
+liste *Maximum(liste *l)
+{
+    if (l)
+    {
+        liste *p = Maximum(l->s);
+        if(p)
+        {
+            if(p->v>l->v)return p;
+            else return l;
+        }
+        else return l;
+    }
+    else return l;
+}
 
 /* Vérifier l'existence d'un diviseur pour une nombre e dans une liste l */
 bool ContientDiviseur(liste *l, int e) 
@@ -173,5 +198,30 @@ bool EstCroissant(liste *l)
     else
     {
         return true; // l est vide ou contient un seul élément
+    }
+}
+
+/* Adresses du minimum et du maximum */
+void PosMinMax(liste *l, liste *&lmin, liste *&lmax) //avec liste *&lmin, liste *&lmax les résultats
+{
+    if(!(l && l->s)) // l est vide ou contient 1 élément
+    {
+        lmin = lmax = l;
+    }
+    else
+    {
+        PosMinMax(l->s, lmin, lmax);
+        // lmin->v < lmax->v
+        if(l->v < lmin->v)
+        {
+            lmin = l;
+        }
+        else
+        {
+            if(l->v > lmax->v)
+            {
+                lmax = l;
+            }
+        }
     }
 }

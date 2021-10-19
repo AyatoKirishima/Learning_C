@@ -1,8 +1,9 @@
 #include "Liste.cpp"
+// /!\ un void ne peut pas s'affecter à une variable !
 
 int main() {
     liste *L1;
-    L1 = AjoutEnTete(NULL, 3);
+    L1 = AjoutEnTete(NULL, 1);
     L1 = AjoutEnTete(L1, 5);
     L1 = AjoutEnTete(L1, 7);
     L1 = AjoutEnTete(L1, 13);
@@ -24,4 +25,13 @@ int main() {
 
     printf("Liste des nombres premiers <= 30\n");
     EcritRec(Nbprem(30));
-}
+    printf("\n");
+
+    liste *min;
+    liste *max;
+    PosMinMax(L1, min, max);
+    printf("Le minimum est : ");
+    EcritRec(min);
+    printf("Le maximum est : ");
+    EcritRec(max);
+    }
