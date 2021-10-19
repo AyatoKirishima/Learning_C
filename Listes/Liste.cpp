@@ -110,3 +110,29 @@ liste *Minimum(liste *l)
 /* Recherche du maximum (son adresse)
 liste *Maximum(liste *l);*/
 
+/* Vérifier l'existence d'un diviseur pour une nombre e dans une liste l */
+bool ContientDiviseur(liste *l, int e) 
+{
+    if(l) 
+    {
+        if(e%l->v == 0) 
+        {
+            return true;
+        }
+        else 
+        {
+            return ContientDiviseur(l->s, e);
+        }
+    }
+    else 
+    {
+        return false;
+    }
+}
+
+/* Construire la liste des nombres premiers <= n donné */
+Liste *Nbprem(int n) 
+{
+
+}
+

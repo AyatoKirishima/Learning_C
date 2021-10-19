@@ -32,4 +32,9 @@ liste *Maximum(liste *l);
 /* Affichage d'une liste en récursif */
 void EcritRec(liste *l);
 
+/* Vérifier l'existence d'un diviseur pour une nombre e dans une liste l */
+bool ContientDiviseur(liste *l, int e);
+
+/* Construire la liste des nombres premiers <= n donné */
+Liste *Nbprem(int n);
 #endif
