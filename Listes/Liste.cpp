@@ -38,9 +38,10 @@ void EcritListe(liste *l)
 }
 
 /* Affichage d'une liste en récursif */
-void Ecritrec(liste *l) {
+void EcritRec(liste *l) {
     if(l) { // non vide
         printf("%d",l->v);
+        printf("\n");
         EcritRec(l->s);
     }
     printf("\n");
