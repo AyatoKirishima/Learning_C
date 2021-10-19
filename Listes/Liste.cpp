@@ -37,6 +37,15 @@ void EcritListe(liste *l)
     }
 }
 
+/* Affichage d'une liste en récursif */
+void Ecritrec(liste *l) {
+    if(l) { // non vide
+        printf("%d",l->v);
+        EcritRec(l->s);
+    }
+    printf("\n");
+}
+
 /* Calcul de la taille d'1 liste*/
 int Taille(liste *l)
 {

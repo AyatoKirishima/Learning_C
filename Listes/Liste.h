@@ -29,4 +29,7 @@ liste *Minimum(liste *l);
 /* Recherche du maximum (son adresse)*/
 liste *Maximum(liste *l);
 
+/* Affichage d'une liste en récursif */
+void EcritRec(liste *l);
+
 #endif
