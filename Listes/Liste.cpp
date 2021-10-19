@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 #include "Liste.h"
 
 /* Type liste : présent dans Liste.h
@@ -223,5 +224,26 @@ void PosMinMax(liste *l, liste *&lmin, liste *&lmax) //avec liste *&lmin, liste 
                 lmax = l;
             }
         }
+    }
+}
+
+/* Valeur du minimum */
+int long ValMin(liste *l)
+{
+    if(l) //Non vide
+    {
+        int e = ValMin(l->s);
+        if(e < l->v)
+        {
+            return e;
+        }
+        else
+        {
+            return l->v;
+        }
+    }
+    else
+    {
+        return LONG.MAX;
     }
 }

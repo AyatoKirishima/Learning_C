@@ -44,4 +44,7 @@ bool EstCroissant(liste *l);
 /* Adresses du minimum et du maximum */
 void PosMinMax(liste *l, liste *&lmin, liste *&lmax);
 
+/* Valeur du minimum */
+int long ValMin(liste *l);
+
 #endif
